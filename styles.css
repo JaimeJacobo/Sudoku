@@ -1,0 +1,26 @@
+body {
+  background-color: black;
+}
+
+.square {
+  height: 80px;
+  width: 80px;
+  border: 1px solid lightgray;
+  font-size: 40px;
+  color: white;
+}
+
+.flexCentered {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* .special {
+  border: 1px solid black;
+} */
+
+.flexRow {
+  display: flex;
+  flex-direction: row;
+}
