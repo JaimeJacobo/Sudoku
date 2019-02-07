@@ -1,49 +1,52 @@
 
 
 
-// generateRandomNumber = (()=>{
-//   number = Math.random() * 10;
-//   number = Math.floor(number);
-//   if(number > 0 && number <= 9){
-//     return number;
-//   } else {
-//     return generateRandomNumber();
-//   };
-// });
+let arrayForRows = [0,0,0,0,0,0,0,0,0];
 
-// getRandomNumber = (()=>{
-//   for(let i = 11; i <= 99; i++){
-//     i = i.toString();
-//     document.getElementById(i).innerHTML = generateRandomNumber();
-//   };
-// });
-
-// getRandomNumber();
-
-
-// let i = '19';
-// document.getElementById(i).innerHTML = generateRandomNumber();
-
-
-// document.getElementById('bubucela').onclick = function(){
-//   alert('satania')
-
-// }
-
-
-generateRandomNumber = ((numberInt)=>{
-  number = Math.random() * 10;
-  number = Math.floor(number);
-  if(number > 0 && number <= numberInt){
-    return number - 1;
-  } else {
-    return generateRandomNumber();
+generateFirstRow = (()=>{
+  for(let i = 0; i < arrayForRows.length; i++){
+    calculateNumbers = (()=>{
+      let randomNumber = Math.floor(Math.random() * 9) + 1;
+      if(arrayForRows.indexOf(randomNumber) == -1){
+        arrayForRows[i] = randomNumber;
+      } else {
+        calculateNumbers();
+      }
+    })
+    calculateNumbers();
   };
+  for(let k = 1; k < 19; k++){
+    for(let i = 0, m = 11; i < arrayForRows.length, m < 20; i++, m++){
+      document.getElementById(m).innerHTML = arrayForRows[i];
+    };
+  }
+  arrayForRows = [0,0,0,0,0,0,0,0,0];
 });
 
+generateSecondRow = (()=>{
+  for(let i = 0; i < arrayForRows.length; i++){
+    calculateNumbers = (()=>{
+      let randomNumber = Math.floor(Math.random() * 9) + 1;
+      if(arrayForRows.indexOf(randomNumber) == -1){
+        arrayForRows[i] = randomNumber;
+      } else {
+        calculateNumbers();
+      }
+    })
+    calculateNumbers();
+  };
+  for(let i = 0, m = 21; i < arrayForRows.length, m < 30; i++, m++){
+    document.getElementById(m).innerHTML = arrayForRows[i];
+  };
+  arrayForRows = [0,0,0,0,0,0,0,0,0];
+});
 
-// numero en primera casilla == array[randomNumber] // borrar ese numero del array
+generateFirstRow();
+generateSecondRow();
 
-//numero en segunda casilla === array[randomNumber]
 
-console.log(generateRandomNumber(9));
+
+
+
+
+

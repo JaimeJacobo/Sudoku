@@ -1,5 +1,5 @@
 body {
-  background-color: black;
+  
 }
 
 .square {
@@ -7,7 +7,6 @@ body {
   width: 80px;
   border: 1px solid lightgray;
   font-size: 40px;
-  color: white;
 }
 
 .flexCentered {
